@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nokutenda Karodza | Digital Marketer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f7f6f2;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f7f6f2;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e5e2dc;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #a35d3c;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #a35d3c;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            color: #a35d3c;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(50px, 8vw, 90px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #a35d3c;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 19px;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #252525;
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 1px solid #252525;
+            color: #252525;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            color: #777;
+            max-width: 600px;
+            margin-bottom: 45px;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            background: #eeeae3;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: #252525;
+            color: white;
+            padding: 45px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-box h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            color: #ddd;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            border: 1px solid #dedbd5;
+            padding: 30px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+        }
+
+        .skill-number {
+            color: #a35d3c;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .skill h3 {
+            margin: 12px 0 8px;
+        }
+
+        .skill p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* PROJECTS */
+
+        .projects {
+            background: #fff;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            border: 1px solid #e2dfda;
+            padding: 35px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 12px;
+            background: #eeeae3;
+            padding: 6px 10px;
+            margin-bottom: 18px;
+            color: #7c4935;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #707070;
+            margin-bottom: 18px;
+        }
+
+        .project-tools {
+            font-size: 12px;
+            color: #a35d3c;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .project a {
+            color: #a35d3c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* PROCESS */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process {
+            padding: 25px;
+            border-top: 2px solid #a35d3c;
+        }
+
+        .process span {
+            font-size: 13px;
+            color: #a35d3c;
+            font-weight: bold;
+        }
+
+        .process h3 {
+            margin: 10px 0;
+        }
+
+        .process p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* TOOLS */
+
+        .tools {
+            background: #eeeae3;
+        }
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tool {
+            background: white;
+            padding: 12px 18px;
+            border: 1px solid #ddd8d0;
+            font-size: 14px;
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            background: #252525;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-intro {
+            color: #bbb;
+            margin: 0 auto 30px;
+        }
+
+        .contact h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #a35d3c;
+            padding-bottom: 5px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #252525;
+            color: #888;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            border-top: 1px solid #444;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 6%;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .about-grid,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .contact h2 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        N<span>K</span>
+    </div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#process">Approach</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Digital Marketing
+        </div>
+
+        <h1>
+            I help brands
+            <span>get noticed.</span>
+        </h1>
+
+        <p>
+            I'm Nokutenda Karodza, a digital marketer focused on
+            creating meaningful online experiences through strategy,
+            content, SEO, social media and email marketing.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Work
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+                Let's Connect
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-grid">
+
+        <div class="about-box">
+
+            <h3>
+                Strategy before posting.
+            </h3>
+
+            <p>
+                Good marketing starts with understanding the
+                audience, the problem and the goal.
+            </p>
+
+        </div>
+
+
+        <div class="about-text">
+
+            <div class="small-title">
+                About Me
+            </div>
+
+            <h2 class="section-title">
+                Digital marketing with purpose.
+            </h2>
+
+            <p>
+                I am a digital marketer passionate about helping
+                businesses strengthen their online presence and
+                connect with the people they want to reach.
+            </p>
+
+            <p>
+                My work combines creative content with practical
+                digital marketing strategies. I enjoy researching
+                audiences, developing campaigns, improving visibility
+                through SEO and creating content that encourages
+                engagement.
+            </p>
+
+            <p>
+                My key areas of interest include digital strategy,
+                social media marketing, SEO, email marketing,
+                content creation and brand strategy.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="small-title">
+        What I Do
+    </div>
+
+    <h2 class="section-title">
+        My Skills
+    </h2>
+
+    <p class="section-intro">
+        A combination of creative thinking, digital tools and
+        marketing strategy.
+    </p>
+
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <div class="skill-number">01</div>
+            <h3>Digital Strategy</h3>
+            <p>
+                Developing practical marketing strategies aligned
+                with business goals and target audiences.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-number">02</div>
+            <h3>Social Media Marketing</h3>
+            <p>
+                Planning content, campaigns and engagement
+                strategies for social media platforms.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-number">03</div>
+            <h3>SEO & AEO</h3>
+            <p>
+                Improving online visibility through keyword
+                research, on-page optimisation and answer-focused
+                content.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-number">04</div>
+            <h3>Email Marketing</h3>
+            <p>
+                Creating email campaigns, welcome sequences and
+                automated customer journeys.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-number">05</div>
+            <h3>Content Creation</h3>
+            <p>
+                Creating useful and engaging content for different
+                audiences and digital platforms.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-number">06</div>
+            <h3>Brand Strategy</h3>
+            <p>
+                Helping businesses communicate their value clearly
+                and consistently online.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <div class="small-title">
+        Selected Work
+    </div>
+
+    <h2 class="section-title">
+        Projects I've Worked On
+    </h2>
+
+    <p class="section-intro">
+        A selection of digital marketing strategies, campaigns,
+        SEO work and email marketing projects I have developed.
+    </p>
+
+
+    <div class="project-grid">
+
+
+        <!-- KARIKUZI -->
+
+        <div class="project">
+
+            <span class="project-tag">
+                Digital Marketing Strategy
+            </span>
+
+            <h3>
+                Karikuzi Protective & Safety Wear
+            </h3>
+
+            <p>
+                Developed a 4-week digital marketing strategy
+                focused on increasing brand visibility, generating
+                qualified enquiries, encouraging quotation requests
+                and building credibility with corporate PPE buyers.
+            </p>
+
+            <div class="project-tools">
+                Strategy · Social Media · Content Planning · SEO
+            </div>
+
+            <a href="#">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- MUNOKUSH -->
+
+        <div class="project">
+
+            <span class="project-tag">
+                Email Marketing
+            </span>
+
+            <h3>
+                Munokush Welcome Email Series
+            </h3>
+
+            <p>
+                Planned a five-email automated welcome journey
+                covering brand introduction, digital marketing
+                education, value delivery, trust building and
+                a clear next step for subscribers.
+            </p>
+
+            <div class="project-tools">
+                Mailchimp · Email Copy · Automation · Segmentation
+            </div>
+
+            <a href="#">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- SEO -->
+
+        <div class="project">
+
+            <span class="project-tag">
+                SEO & AEO
+            </span>
+
+            <h3>
+                SEO & AEO Audit
+            </h3>
+
+            <p>
+                Worked on an SEO and Answer Engine Optimisation
+                exercise covering on-page SEO, technical elements,
+                keywords, headings, metadata, FAQs and content
+                optimisation.
+            </p>
+
+            <div class="project-tools">
+                SEO · AEO · Keyword Research · Content Optimisation
+            </div>
+
+            <a href="#">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="project">
+
+            <span class="project-tag">
+                Social Media Marketing
+            </span>
+
+            <h3>
+                Social Media Campaign Planning
+            </h3>
+
+            <p>
+                Created a social media campaign structure covering
+                target audiences, content themes, formats,
+                calls-to-action and engagement strategies designed
+                to turn followers into an active community.
+            </p>
+
+            <div class="project-tools">
+                Social Media · Content Strategy · Campaign Planning
+            </div>
+
+            <a href="#">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- MARTECH -->
+
+        <div class="project">
+
+            <span class="project-tag">
+                Marketing Automation
+            </span>
+
+            <h3>
+                MarTech Marketing Stack
+            </h3>
+
+            <p>
+                Designed a practical marketing technology workflow
+                showing how tools can work together across email
+                marketing, content creation, analytics, SEO and
+                automation.
+            </p>
+
+            <div class="project-tools">
+                Mailchimp · Canva · GA4 · Search Console · Zapier
+            </div>
+
+            <a href="#">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- TECHNOVA -->
+
+        <div class="project">
+
+            <span class="project-tag">
+                Brand & Content Strategy
+            </span>
+
+            <h3>
+                TechNova
+            </h3>
+
+            <p>
+                Developed a brand direction and educational content
+                approach focused on making technology easier to
+                understand for students, entrepreneurs, small
+                businesses and growing companies.
+            </p>
+
+            <div class="project-tools">
+                Branding · Content Strategy · Digital Marketing
+            </div>
+
+            <a href="#">
+                View Project →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPROACH -->
+
+<section id="process">
+
+    <div class="small-title">
+        My Approach
+    </div>
+
+    <h2 class="section-title">
+        How I Work
+    </h2>
+
+    <p class="section-intro">
+        Effective marketing is more than simply creating posts.
+        It starts with understanding the audience and the goal.
+    </p>
+
+
+    <div class="process-grid">
+
+        <div class="process">
+            <span>01</span>
+            <h3>Research</h3>
+            <p>
+                Understand the audience, market, competitors and
+                business goals.
+            </p>
+        </div>
+
+
+        <div class="process">
+            <span>02</span>
+            <h3>Plan</h3>
+            <p>
+                Turn insights into a clear and practical digital
+                marketing strategy.
+            </p>
+        </div>
+
+
+        <div class="process">
+            <span>03</span>
+            <h3>Create</h3>
+            <p>
+                Develop useful content and campaigns designed for
+                the target audience.
+            </p>
+        </div>
+
+
+        <div class="process">
+            <span>04</span>
+            <h3>Improve</h3>
+            <p>
+                Review results and use insights to improve future
+                marketing activities.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TOOLS -->
+
+<section class="tools" id="tools">
+
+    <div class="small-title">
+        Tools I Use
+    </div>
+
+    <h2 class="section-title">
+    Tools l Use
+    </h2>
+
+    <p class="section-intro">
+        Tools that support my marketing research, content creation,
+        analytics and campaign execution.
+    </p>
+
+
+    <div class="tools-list">
+
+        <div class="tool">Canva</div>
+        <div class="tool">Mailchimp</div>
+        <div class="tool">Google Analytics 4</div>
+        <div class="tool">Google Search Console</div>
+        <div class="tool">Google Workspace</div>
+        <div class="tool">Microsoft Office</div>
+        <div class="tool">Zapier</div>
+        <div class="tool">Figma</div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="small-title">
+        Let's Work Together
+    </div>
+
+    <h2>
+        Have a project in mind?
+    </h2>
+
+    <p class="section-intro">
+        Whether you need help with social media, SEO, email
+        marketing, content or digital strategy, I'd love to connect.
+    </p>
+
+    <a class="contact-email" href="https://mail.google.com/">
+        nokutendakarodza42@gmail.com
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Nokutenda Karodza.
+    Digital Marketing Portfolio.
+
+</footer>
+
+
+</body>
+</html>
