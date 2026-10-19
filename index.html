@@ -143,6 +143,218 @@
         }
 
 
+        /* SIGNATURE HERO REDESIGN */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 84vh;
+            padding: 82px 8%;
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+            align-items: center;
+            gap: 5%;
+            color: #fffaf2;
+            background: #171c2b;
+            isolation: isolate;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 540px;
+            height: 540px;
+            right: -130px;
+            top: -170px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(230, 115, 75, .24), rgba(230, 115, 75, 0) 68%);
+            z-index: -1;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            left: -260px;
+            bottom: -280px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            box-shadow: 0 0 0 45px rgba(255,255,255,.025), 0 0 0 90px rgba(255,255,255,.02);
+            z-index: -1;
+        }
+        .hero-content { max-width: 680px; position: relative; z-index: 2; }
+        .hero .small-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffb08d;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 999px;
+            padding: 9px 15px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+        .hero .small-title::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: #ff9a70;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(255,154,112,.9);
+        }
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 6vw, 82px);
+            line-height: .99;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+            max-width: 700px;
+        }
+        .hero h1 span {
+            display: block;
+            color: #ff9b73;
+            font-style: italic;
+        }
+        .hero p {
+            max-width: 550px;
+            font-size: 17px;
+            line-height: 1.85;
+            color: #c5c9d3;
+            margin-bottom: 30px;
+        }
+        .hero .btn { border-radius: 8px; padding: 15px 22px; }
+        .hero .btn-primary {
+            background: #ff9b73;
+            color: #211d25;
+            box-shadow: 0 9px 25px rgba(255,155,115,.18);
+        }
+        .hero .btn-secondary { border-color: rgba(255,255,255,.38); color: #fffaf2; }
+        .hero .btn-secondary:hover { background: rgba(255,255,255,.08); }
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 30px;
+            color: #aeb4c2;
+            font-size: 12px;
+            letter-spacing: .3px;
+        }
+        .hero-note-line { width: 34px; height: 1px; background: #ff9b73; }
+        .hero-visual {
+            min-height: 440px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-orbit {
+            position: absolute;
+            width: min(35vw, 390px);
+            height: min(35vw, 390px);
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 50%;
+        }
+        .hero-orbit::before, .hero-orbit::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 50%;
+            inset: 25px;
+        }
+        .hero-orbit::after { inset: 55px; }
+        .visual-core {
+            width: 210px;
+            height: 260px;
+            border-radius: 110px 110px 22px 22px;
+            background: linear-gradient(145deg, #ffbd9d, #dc7759 72%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 70px rgba(0,0,0,.25);
+            transform: rotate(-5deg);
+        }
+        .visual-core::before {
+            content: "NK";
+            font-family: "Playfair Display", serif;
+            font-size: 82px;
+            letter-spacing: -8px;
+            color: rgba(35,29,38,.82);
+            transform: rotate(5deg);
+        }
+        .visual-core::after {
+            content: "DIGITAL\A MARKETING";
+            white-space: pre;
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.8;
+            color: rgba(35,29,38,.75);
+            transform: rotate(5deg);
+        }
+        .floating-card {
+            position: absolute;
+            background: rgba(255,255,255,.96);
+            color: #242737;
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: 13px;
+            box-shadow: 0 18px 45px rgba(0,0,0,.22);
+            padding: 14px 16px;
+            z-index: 2;
+        }
+        .floating-card small { display: block; color: #777b87; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+        .floating-card strong { display: block; font-size: 14px; margin-top: 4px; }
+        .floating-card .mini-mark { display: inline-flex; width: 25px; height: 25px; align-items: center; justify-content: center; border-radius: 7px; background: #fce4d9; color: #a34d32; font-weight: 800; margin-right: 7px; }
+        .card-strategy { top: 52px; left: 0; transform: rotate(-5deg); }
+        .card-content { right: -3px; top: 155px; transform: rotate(5deg); }
+        .card-content strong { color: #a34d32; }
+        .card-seo { bottom: 48px; left: 20px; transform: rotate(4deg); }
+        .card-seo strong { letter-spacing: 1px; }
+        .hero-sticker {
+            position: absolute;
+            right: 25px;
+            bottom: 20px;
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: #f4d36d;
+            color: #272332;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 10px;
+            line-height: 1.3;
+            font-weight: 800;
+            letter-spacing: .7px;
+            transform: rotate(12deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+        }
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; gap: 15px; padding-top: 75px; }
+            .hero-content { max-width: 760px; }
+            .hero-visual { min-height: 390px; margin-top: 5px; }
+            .hero-orbit { width: 320px; height: 320px; }
+        }
+        @media (max-width: 500px) {
+            .hero { padding: 58px 6% 40px; }
+            .hero h1 { font-size: 48px; letter-spacing: -1.5px; }
+            .hero p { font-size: 15px; }
+            .hero-visual { min-height: 340px; margin-left: -10px; margin-right: -10px; }
+            .hero-orbit { width: 270px; height: 270px; }
+            .visual-core { width: 160px; height: 215px; }
+            .visual-core::before { font-size: 65px; }
+            .card-strategy { top: 22px; left: -3px; }
+            .card-content { right: -2px; top: 120px; }
+            .card-seo { bottom: 22px; left: 0; }
+            .hero-sticker { right: 4px; bottom: 8px; width: 68px; height: 68px; font-size: 8px; }
+        }
+
         /* GENERAL SECTIONS */
 
         section {
@@ -258,6 +470,104 @@
         .project:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .project {
+            padding: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .project-body {
+            padding: 28px 30px 30px;
+        }
+
+        .project-visual {
+            min-height: 205px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 22px;
+            background-size: cover;
+            background-position: center;
+            isolation: isolate;
+        }
+
+        .project-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(20,24,30,.04), rgba(20,24,30,.78));
+            z-index: -1;
+        }
+
+        .project-visual span {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .project-visual.karikuzi {
+            background-image: url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85");
+        }
+        .project-visual.email {
+            background-image: url("https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=1000&q=85");
+        }
+        .project-visual.seo {
+            background-image: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85");
+        }
+        .project-visual.social {
+            background-image: url("https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=85");
+        }
+        .project-visual.stack {
+            background-image: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85");
+        }
+        .project-visual.technova {
+            background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .tool {
+            min-height: 105px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(37,37,37,.04);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .tool:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 9px 22px rgba(37,37,37,.09);
+        }
+
+        .tool img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .tool span {
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            .tools-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .project-visual { min-height: 175px; }
+            .project-body { padding: 24px; }
         }
 
         .project-tag {
@@ -441,6 +751,123 @@
             }
         }
 
+
+        /* HERO EXPERIENCE: bold editorial layout with a lively campaign collage */
+        .hero {
+            min-height: 760px;
+            padding: 82px 8% 112px;
+            grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+            gap: 3.5%;
+            background: #171c2b;
+            background-image: radial-gradient(ellipse at 80% 30%, rgba(255,155,115,.13), transparent 35%), linear-gradient(135deg, #171c2b 0%, #202638 58%, #171c2b 100%);
+        }
+        .hero-content { max-width: 690px; padding-bottom: 8px; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,.16); border-radius: 100px; padding: 10px 14px; color: #f4d7c8; background: rgba(255,255,255,.055); font-size: 10px; letter-spacing: 1.7px; font-weight: 700; margin-bottom: 28px; }
+        .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff9b73; box-shadow: 0 0 0 5px rgba(255,155,115,.13); animation: pulse-dot 2s infinite; }
+        .hero-kicker { color: #aeb4c2 !important; font-size: 11px !important; font-weight: 700; letter-spacing: 2.5px; margin: 0 0 14px !important; }
+        .hero h1 { font-size: clamp(48px, 5.7vw, 79px); max-width: 690px; line-height: .99; letter-spacing: -2.7px; margin-bottom: 25px; }
+        .hero h1 span { position: relative; width: fit-content; color: #ffab86; }
+        .hero h1 span::after { content: ''; position: absolute; height: 8px; left: 2px; right: 5px; bottom: -8px; border-radius: 50%; background: #f4d36d; transform: rotate(-1.8deg) scaleX(.98); transform-origin: left; animation: underline-in 1s .4s both; }
+        .hero .hero-description { max-width: 510px; font-size: 16px; line-height: 1.85; color: #c8ccd6; margin: 34px 0 21px; }
+        .hero-specialties { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; color: #f1eee9; font-size: 12px; margin: 0 0 28px; }
+        .hero-specialties i { color: #ff9b73; font-style: normal; font-size: 13px; }
+        .hero .buttons { gap: 12px; }
+        .hero .btn { border-radius: 7px; padding: 15px 19px; font-size: 13px; }
+        .hero .btn b { margin-left: 10px; font-size: 17px; font-weight: 500; }
+        .hero .btn-primary { background: #ffab86; color: #211d25; box-shadow: 0 10px 28px rgba(255,155,115,.2); }
+        .hero .btn-primary:hover { background: #ffd0b8; box-shadow: 0 14px 34px rgba(255,155,115,.3); }
+        .hero .btn-secondary { border-color: rgba(255,255,255,.28); }
+        .hero-bottom-note { display: flex; align-items: center; gap: 12px; margin-top: 31px; color: #9fa6b7; font-size: 11px; }
+        .note-line { width: 31px; height: 1px; background: #ff9b73; }
+        .hero-visual { min-height: 510px; margin-top: 2px; }
+        .visual-glow { position: absolute; width: 310px; height: 310px; border-radius: 50%; background: rgba(255,155,115,.16); filter: blur(55px); }
+        .hero-orbit { border-color: rgba(255,255,255,.13); animation: orbit-breathe 8s ease-in-out infinite; }
+        .orbit-one { width: min(35vw, 400px); height: min(35vw, 400px); }
+        .orbit-two { width: min(28vw, 320px); height: min(28vw, 320px); border-style: dashed; animation-direction: reverse; animation-duration: 22s; }
+        .visual-core { width: 225px; height: 290px; border-radius: 115px 115px 24px 24px; background: linear-gradient(145deg, #ffe0c9 0%, #ffad88 43%, #d66f58 100%); transform: rotate(-7deg); box-shadow: 0 28px 80px rgba(0,0,0,.35), inset -12px -10px 28px rgba(114,48,43,.12); animation: float-core 5s ease-in-out infinite; }
+        .visual-core::before { content: none; }
+        .visual-core::after { content: none; }
+        .visual-core strong { font-family: 'Playfair Display', serif; font-size: 88px; letter-spacing: -9px; line-height: 1; color: #282433; transform: rotate(7deg); }
+        .visual-core strong span { color: #fff4dc; }
+        .core-top, .core-bottom { position: absolute; color: rgba(40,36,51,.75); font-size: 8px; letter-spacing: 2px; font-weight: 800; transform: rotate(7deg); }
+        .core-top { top: 40px; }
+        .core-bottom { bottom: 28px; }
+        .floating-card { display: flex; align-items: center; gap: 10px; padding: 13px 15px; border-radius: 12px; animation: card-float 5s ease-in-out infinite; }
+        .floating-card small { font-size: 8px; letter-spacing: 1.1px; }
+        .floating-card strong { font-size: 12px; }
+        .card-icon { display: flex; flex: 0 0 32px; height: 32px; align-items: center; justify-content: center; border-radius: 9px; font-size: 18px; font-weight: 800; }
+        .coral-icon { background: #ffe1d3; color: #a34d32; }
+        .yellow-icon { background: #fff1b7; color: #715b00; }
+        .lilac-icon { background: #e6ddff; color: #58458b; }
+        .card-strategy { top: 56px; left: -6px; transform: rotate(-5deg); }
+        .card-content { right: -10px; top: 164px; transform: rotate(4deg); animation-delay: -1.4s; }
+        .card-seo { bottom: 115px; left: -8px; transform: rotate(3deg); animation-delay: -2.4s; }
+        .mini-dashboard { position: absolute; right: 7px; bottom: 25px; width: 260px; padding: 15px 16px 12px; border-radius: 14px; background: rgba(255,255,255,.97); color: #252738; box-shadow: 0 20px 55px rgba(0,0,0,.25); transform: rotate(2deg); z-index: 3; }
+        .dashboard-head, .dashboard-footer { display: flex; align-items: center; justify-content: space-between; font-size: 8px; font-weight: 800; letter-spacing: 1px; color: #828493; }
+        .dashboard-dots { letter-spacing: 2px; color: #d77b5b; }
+        .dashboard-main { display: flex; justify-content: space-between; align-items: end; gap: 10px; padding: 17px 0 13px; }
+        .dashboard-main small { display: block; color: #999aaa; font-size: 7px; letter-spacing: 1px; margin-bottom: 4px; }
+        .dashboard-main strong { font-family: 'Playfair Display', serif; font-size: 17px; }
+        .sparkline { height: 33px; display: flex; align-items: end; gap: 4px; }
+        .sparkline i { display: block; width: 6px; border-radius: 5px 5px 1px 1px; background: #f29a77; height: 40%; }
+        .sparkline i:nth-child(2) { height: 60%; }.sparkline i:nth-child(3) { height: 48%; }.sparkline i:nth-child(4) { height: 82%; }.sparkline i:nth-child(5) { height: 67%; }.sparkline i:nth-child(6) { height: 100%; }.sparkline i:nth-child(7) { height: 88%; background: #d76f58; }
+        .dashboard-footer { border-top: 1px solid #efedf0; padding-top: 10px; font-size: 7px; }
+        .hero-sticker { width: 83px; height: 83px; right: 0; bottom: 250px; background: #f4d36d; transform: rotate(11deg); animation: sticker-wiggle 6s ease-in-out infinite; }
+        .hero-sticker span { display: block; font-size: 8px; letter-spacing: 1px; }
+        .hero-sticker strong { display: block; font-size: 11px; }
+        .hero-sticker b { font-size: 17px; }
+        .visual-caption { position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.38); white-space: nowrap; font-size: 8px; letter-spacing: 3px; }
+        .hero-marquee { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.025); color: #aeb4c2; font-size: 9px; font-weight: 700; letter-spacing: 2.4px; white-space: nowrap; }
+        .hero-marquee div { width: max-content; animation: marquee-slide 28s linear infinite; }
+        .hero-marquee span { color: #ff9b73; margin: 0 22px; }
+        @keyframes pulse-dot { 50% { box-shadow: 0 0 0 8px rgba(255,155,115,0); } }
+        @keyframes underline-in { from { transform: scaleX(0) rotate(-1.8deg); } to { transform: scaleX(.98) rotate(-1.8deg); } }
+        @keyframes float-core { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+        @keyframes card-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+        @keyframes orbit-breathe { 0%,100% { scale: 1; opacity: .8; } 50% { scale: 1.035; opacity: 1; } }
+        @keyframes sticker-wiggle { 0%,90%,100% { rotate: 0deg; } 94% { rotate: 8deg; } 97% { rotate: -5deg; } }
+        @keyframes marquee-slide { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+        @media (prefers-reduced-motion: reduce) { .hero *, .hero::before, .hero::after { animation: none !important; scroll-behavior: auto !important; } }
+        @media (max-width: 900px) {
+            .hero { min-height: auto; padding: 70px 7% 92px; grid-template-columns: 1fr; gap: 18px; }
+            .hero-content { max-width: 720px; }
+            .hero-visual { min-height: 470px; }
+            .orbit-one { width: 340px; height: 340px; }
+            .orbit-two { width: 275px; height: 275px; }
+            .hero h1 { font-size: clamp(48px, 8vw, 72px); }
+        }
+        @media (max-width: 520px) {
+            .hero { padding: 54px 6% 82px; }
+            .hero-eyebrow { font-size: 8px; letter-spacing: 1px; padding: 9px 11px; }
+            .hero h1 { font-size: clamp(43px, 12vw, 58px); letter-spacing: -1.8px; }
+            .hero .hero-description { font-size: 14px; line-height: 1.75; margin-top: 28px; }
+            .hero-specialties { gap: 7px; font-size: 10px; }
+            .hero .buttons { align-items: stretch; }
+            .hero .btn { width: 100%; text-align: center; }
+            .hero-bottom-note { font-size: 10px; }
+            .hero-visual { min-height: 375px; margin: 0 -12px; }
+            .orbit-one { width: 280px; height: 280px; }
+            .orbit-two { width: 230px; height: 230px; }
+            .visual-core { width: 150px; height: 210px; }
+            .visual-core strong { font-size: 64px; }
+            .core-top { top: 28px; font-size: 6px; }
+            .core-bottom { bottom: 20px; font-size: 6px; }
+            .floating-card { padding: 10px; gap: 7px; }
+            .floating-card small { font-size: 7px; }
+            .floating-card strong { font-size: 10px; }
+            .card-icon { flex-basis: 26px; height: 26px; }
+            .card-strategy { top: 24px; left: 2px; }
+            .card-content { right: 0; top: 105px; }
+            .card-seo { bottom: 88px; left: 0; }
+            .mini-dashboard { width: 205px; right: 0; bottom: 7px; padding: 11px; }
+            .dashboard-main strong { font-size: 13px; }
+            .hero-sticker { width: 62px; height: 62px; right: 3px; bottom: 200px; font-size: 8px; }
+            .hero-sticker span { font-size: 6px; }
+            .hero-sticker strong { font-size: 8px; }
+            .visual-caption { font-size: 6px; letter-spacing: 2px; bottom: -7px; }
+            .hero-marquee { padding: 11px 0; font-size: 8px; }
+        }
+
     </style>
 </head>
 
@@ -471,38 +898,30 @@
 <!-- HERO -->
 
 <header class="hero">
-
     <div class="hero-content">
-
-        <div class="small-title">
-            Digital Marketing
-        </div>
-
-        <h1>
-            I help brands
-            <span>get noticed.</span>
-        </h1>
-
-        <p>
-            I'm Nokutenda Karodza, a digital marketer focused on
-            creating meaningful online experiences through strategy,
-            content, SEO, social media and email marketing.
-        </p>
-
+        <div class="hero-eyebrow"><span class="live-dot"></span> DIGITAL MARKETING · STRATEGY · CREATIVE THINKING</div>
+        <p class="hero-kicker">HELLO, I'M NOKUTENDA KARODZA</p>
+        <h1>I turn brand ideas into <span>something people feel.</span></h1>
+        <p class="hero-description">Strategy with a human touch. Content with a reason. Digital marketing that helps brands show up clearly, connect meaningfully and keep growing.</p>
+        <div class="hero-specialties"><span>Social media</span><i>✳</i><span>SEO & AEO</span><i>✳</i><span>Email marketing</span></div>
         <div class="buttons">
-
-            <a href="#projects" class="btn btn-primary">
-                View My Work
-            </a>
-
-            <a href="#contact" class="btn btn-secondary">
-                Let's Connect
-            </a>
-
+            <a href="#projects" class="btn btn-primary">See what I've been creating <b>↗</b></a>
+            <a href="#contact" class="btn btn-secondary">Let's connect <b>↗</b></a>
         </div>
-
+        <div class="hero-bottom-note"><span class="note-line"></span><span>Curiosity first. Strategy always. People at the centre.</span></div>
     </div>
-
+    <div class="hero-visual" aria-label="Illustration of a creative digital marketing workspace">
+        <div class="visual-glow"></div>
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="visual-core"><span class="core-top">THE CREATIVE SIDE OF</span><strong>NK<span>.</span></strong><span class="core-bottom">DIGITAL MARKETING</span></div>
+        <div class="floating-card card-strategy"><div class="card-icon coral-icon">✳</div><div><small>THE STARTING POINT</small><strong>Strategy first</strong></div></div>
+        <div class="floating-card card-content"><div class="card-icon yellow-icon">↗</div><div><small>THE GOAL</small><strong>Content that connects</strong></div></div>
+        <div class="floating-card card-seo"><div class="card-icon lilac-icon">⌕</div><div><small>THE DISCOVERY</small><strong>SEO + AEO</strong></div></div>
+        <div class="mini-dashboard"><div class="dashboard-head"><span>CAMPAIGN SNAPSHOT</span><span class="dashboard-dots">•••</span></div><div class="dashboard-main"><div><small>THE RIGHT MESSAGE</small><strong>Changes everything.</strong></div><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="dashboard-footer"><span>RESEARCH</span><span>CREATE</span><span>CONNECT</span></div></div>
+        <div class="hero-sticker"><span>MAKE IT</span><strong>MATTER</strong><b>✦</b></div>
+        <div class="visual-caption">IDEAS → STRATEGY → IMPACT</div>
+    </div>
+    <div class="hero-marquee" aria-hidden="true"><div>GOOD MARKETING STARTS WITH PEOPLE <span>✳</span> GOOD MARKETING STARTS WITH PEOPLE <span>✳</span> GOOD MARKETING STARTS WITH PEOPLE <span>✳</span></div></div>
 </header>
 
 
@@ -672,6 +1091,10 @@
         <!-- KARIKUZI -->
 
         <div class="project">
+            <div class="project-visual karikuzi" role="img" aria-label="Marketing strategy project cover">
+                <span>Marketing strategy</span>
+            </div>
+            <div class="project-body">
 
             <span class="project-tag">
                 Digital Marketing Strategy
@@ -696,12 +1119,18 @@
                 View Project →
             </a>
 
+            </div>
+
         </div>
 
 
         <!-- MUNOKUSH -->
 
         <div class="project">
+            <div class="project-visual email" role="img" aria-label="Email journey project cover">
+                <span>Email journey</span>
+            </div>
+            <div class="project-body">
 
             <span class="project-tag">
                 Email Marketing
@@ -726,12 +1155,18 @@
                 View Project →
             </a>
 
+            </div>
+
         </div>
 
 
         <!-- SEO -->
 
         <div class="project">
+            <div class="project-visual seo" role="img" aria-label="Search visibility project cover">
+                <span>Search visibility</span>
+            </div>
+            <div class="project-body">
 
             <span class="project-tag">
                 SEO & AEO
@@ -756,12 +1191,18 @@
                 View Project →
             </a>
 
+            </div>
+
         </div>
 
 
         <!-- SOCIAL MEDIA -->
 
         <div class="project">
+            <div class="project-visual social" role="img" aria-label="Content & community project cover">
+                <span>Content & community</span>
+            </div>
+            <div class="project-body">
 
             <span class="project-tag">
                 Social Media Marketing
@@ -786,12 +1227,18 @@
                 View Project →
             </a>
 
+            </div>
+
         </div>
 
 
         <!-- MARTECH -->
 
         <div class="project">
+            <div class="project-visual stack" role="img" aria-label="Connected marketing tools project cover">
+                <span>Connected marketing tools</span>
+            </div>
+            <div class="project-body">
 
             <span class="project-tag">
                 Marketing Automation
@@ -816,12 +1263,18 @@
                 View Project →
             </a>
 
+            </div>
+
         </div>
 
 
         <!-- TECHNOVA -->
 
         <div class="project">
+            <div class="project-visual technova" role="img" aria-label="Brand & content project cover">
+                <span>Brand & content</span>
+            </div>
+            <div class="project-body">
 
             <span class="project-tag">
                 Brand & Content Strategy
@@ -840,7 +1293,9 @@
 
             <div class="project-tools">
                 Branding · Content Strategy · Digital Marketing
-            </div>
+                </div>
+
+        </div>
 
             <a href="#">
                 View Project →
@@ -937,14 +1392,14 @@
 
     <div class="tools-list">
 
-        <div class="tool">Canva</div>
-        <div class="tool">Mailchimp</div>
-        <div class="tool">Google Analytics 4</div>
-        <div class="tool">Google Search Console</div>
-        <div class="tool">Google Workspace</div>
-        <div class="tool">Microsoft Office</div>
-        <div class="tool">Zapier</div>
-        <div class="tool">Figma</div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva logo"><span>Canva</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/mailchimp/FFE01B" alt="Mailchimp logo"><span>Mailchimp</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics logo"><span>Google Analytics 4</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googlesearchconsole/458CF5" alt="Google Search Console logo"><span>Search Console</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googleworkspace/4285F4" alt="Google Workspace logo"><span>Google Workspace</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/microsoftoffice/D83B01" alt="Microsoft Office logo"><span>Microsoft Office</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="Zapier logo"><span>Zapier</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma logo"><span>Figma</span></div>
 
     </div>
 
